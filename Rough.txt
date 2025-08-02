@@ -1,0 +1,27 @@
+diet_chatbot/
+├── .env                          # Environment variables (API keys)
+├── main.py                       # Orchestrates the LangGraph workflow
+├── agents/                       # Contains definitions for all agents
+│   ├── __init__.py               # Makes 'agents' a Python package
+│   ├── base_agent.py             # Base class for all agents
+│   ├── orchestrator.py           # Defines the Orchestrator Agent
+│   ├── vegetarian.py             # Defines the Vegetarian Diet Agent
+│   ├── non_vegetarian.py         # Defines the Non-Vegetarian Diet Agent
+│   ├── vegan.py                  # Defines the Vegan Diet Agent
+│   └── common_tools.py           # Shared tools (Tavily search, RAG retrieval)
+├── data/                         # Stores your knowledge base files
+│   ├── recipe_pdfs/              # Directory for your PDF recipe books
+│   │   ├── vegetarian/           # Vegetarian specific PDFs
+│   │   │   └── vegetarian_cookbook.pdf
+│   │   ├── vegan/                # Vegan specific PDFs
+│   │   │   └── vegan_meal_guide.pdf
+│   │   └── non_vegetarian/       # Non-Vegetarian specific PDFs
+│   │       └── non_veg_recipes.pdf
+│   ├── recipes.json              # (Optional) Structured recipe data, if any
+│   └── dietary_facts.json        # (Optional) General dietary facts, if any
+├── rag/                          # Components for Retrieval-Augmented Generation (RAG)
+│   ├── __init__.py               # Makes 'rag' a Python package
+│   ├── knowledge_base.py         # Handles PDF loading, chunking, and vector store creation
+│   └── retriever.py              # Provides the RAG retriever instance
+├── config.py                     # Global configurations (LLM model, API keys, paths)
+└── requirements.txt              # Python project dependencies
